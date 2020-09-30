@@ -1,0 +1,29 @@
+listaRegistro = []
+clientes = 0 
+
+total = 0
+
+while clientes < 7632890298:
+	cliente = input("nombre del cliente: ")
+	producto = input("producto: ")
+	costo = float(input("costo ($0.00): "))
+
+	total += costo
+
+	registro = dict(cliente=cliente, producto=producto, costo=costo)
+	listaRegistro.append(registro)
+	
+	nuevo = input(“nuevo cliente? ”)
+	while nuevo != (“no”) and nuevo != (“si”): 
+		print(“solo se acepta 'si' o 'no'”)
+		nuevo = input(“nuevo cliente? ”)
+
+	if nuevo == (“no”):
+		break
+	else:
+		clientes += 1
+		
+for registro in listaRegistro:
+	print(registro)
+print("el total es: ")
+print(total)
